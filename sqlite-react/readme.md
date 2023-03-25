@@ -41,3 +41,22 @@ npm start
 База данных создается автоматически и наполняется тестовыми данными
 
 Для сброса в начальное состояние нужно удалить файл или открыть страницу http://localhost:5555/static/reset
+
+
+# Скриншоты
+
+### HTML + JS
+
+![alt text](screenshots/html-js.png)
+
+### React.js
+
+![alt text](screenshots/react-list.png)
+
+![alt text](screenshots/react-creation-modal.png)
+
+![alt text](screenshots/react-loading-modal.png)
+
+![alt text](screenshots/react-editing-modal.png)
+
+![alt text](screenshots/react-saving-modal.png)
