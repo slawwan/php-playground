@@ -10,6 +10,7 @@ export interface LossesListProps {
   onDelete: (id: Id) => void;
   onEdit: (id: Id) => void;
 }
+
 export const LossesList: FC<LossesListProps> = (props) => {
   const references = useContext(ReferencesContext);
   return (

@@ -6,10 +6,10 @@ header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, PATCH, OPTIONS");
 require_once($_SERVER["DOCUMENT_ROOT"] . "/database.php");
 
 global $db;
-$params = Array();
+$params = [];
 parse_str($_SERVER["QUERY_STRING"] ?? "", $params);
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
+if ($_SERVER["REQUEST_METHOD"] === "GET") {
     $id = $params["id"] ?? NULL;
 
     if ($id) {
@@ -25,19 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $data = json_decode(file_get_contents("php://input"), true);
     $id = $params["id"] ?? NULL;
 
-    $loss = $id ? $db->update_loss($id, $data) : $db->insert_loss($data);;
+    $loss = $id ? $db->update_loss($id, $data) : $db->insert_loss($data);
 
     header("Content-Type: application/json");
     echo json_encode($loss);
     exit();
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
+if ($_SERVER["REQUEST_METHOD"] === "DELETE") {
     $db->delete_loss($params["id"]);
     exit();
 }
-?>
+
