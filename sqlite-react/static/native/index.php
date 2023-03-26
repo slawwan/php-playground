@@ -2,9 +2,6 @@
 
 require_once($_SERVER["DOCUMENT_ROOT"] . "/database.php");
 
-global $db;
-
-$url = $_SERVER["REQUEST_URI"];
 $branch_offices = $db->select_branch_offices();
 $heating_substation = $db->select_heating_substations();
 $losses = $db->select_losses();
